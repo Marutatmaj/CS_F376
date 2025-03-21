@@ -1,0 +1,4 @@
+p4c --target bmv2 --arch v1model --p4runtime-files p4info.txt -o bmv2.json controller.p4
+
+simple_switch_CLI --thrift-port 9090
+counter_read MyIngress.direct_port_counter 0
