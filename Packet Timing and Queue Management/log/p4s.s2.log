@@ -1,0 +1,337 @@
+Calling target program-options parser
+[19:26:43.034] [bmv2] [D] [thread 51174] Set default default entry for table 'tbl_src145': src145 - 
+[19:26:43.034] [bmv2] [D] [thread 51174] Set default default entry for table 'tbl_src149': src149 - 
+[19:26:43.034] [bmv2] [D] [thread 51174] Set default default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[19:26:43.036] [bmv2] [D] [thread 51174] Set default default entry for table 'tbl_src185': src185 - 
+[19:26:43.036] [bmv2] [D] [thread 51174] Set default default entry for table 'tbl_src180': src180 - 
+[19:26:43.036] [bmv2] [D] [thread 51174] Set default default entry for table 'tbl_src189': src189 - 
+[19:26:43.036] [bmv2] [D] [thread 51174] Set default default entry for table 'MyEgress.debug_table': NoAction - 
+Adding interface s2-eth1 as port 1
+[19:26:43.038] [bmv2] [D] [thread 51174] Adding interface s2-eth1 as port 1
+Adding interface s2-eth2 as port 2
+[19:26:43.066] [bmv2] [D] [thread 51174] Adding interface s2-eth2 as port 2
+Adding interface s2-eth3 as port 3
+[19:26:43.098] [bmv2] [D] [thread 51174] Adding interface s2-eth3 as port 3
+Server listening on 0.0.0.0:9560
+[19:26:43.121] [bmv2] [I] [thread 51174] Starting Thrift server on port 9091
+[19:26:43.122] [bmv2] [I] [thread 51174] Thrift server was started
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Processing packet received on port 2
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Parser 'parser': start
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Extracting header 'ethernet'
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Parser state 'start': key is 86dd
+[19:26:43.181] [bmv2] [T] [thread 51184] [0.0] [cxt 0] Bytes parsed: 14
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Parser 'parser': end
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Pipeline 'ingress': start
+[19:26:43.181] [bmv2] [T] [thread 51184] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(144) Condition "meta.queue_size < standard_metadata.deq_qdepth && meta.queue_size > 0" (node_2) is false
+[19:26:43.181] [bmv2] [T] [thread 51184] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(148) Condition "hdr.ipv4.isValid()" (node_4) is false
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Pipeline 'ingress': end
+[19:26:43.181] [bmv2] [D] [thread 51184] [0.0] [cxt 0] Egress port is 0
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Pipeline 'egress': start
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(179) Condition "hdr.time.isValid()" (node_9) is false
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Applying table 'tbl_src180'
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Looking up key:
+
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Table 'tbl_src180': miss
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Action entry is src180 - 
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Action src180
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(180) Primitive hdr.time.setValid()
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(5) Primitive 0x800; ...
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(182) Primitive hdr.time.time = standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Applying table 'tbl_src189'
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Looking up key:
+
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Table 'tbl_src189': miss
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Action entry is src189 - 
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Action src189
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(189) Primitive meta.cur_persist_time = standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Applying table 'MyEgress.debug_table'
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Looking up key:
+* hdr.ipv4.identification     : 0000
+* hdr.ipv4.ttl                : 00
+* hdr.ethernet.dstAddr        : 3333ff020402
+* standard_metadata.deq_qdepth: 000000
+* hdr.time.proto_id           : 0800
+* hdr.time.time               : 000000000318
+* meta.queue_size             : 000000
+* meta.cur_persist_time       : 000000000318
+
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Table 'MyEgress.debug_table': miss
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Action entry is NoAction - 
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Action NoAction
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Pipeline 'egress': end
+[19:26:43.182] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Deparser 'deparser': start
+[19:26:43.182] [bmv2] [T] [thread 51185] [0.0] [cxt 0] Skipping checksum 'cksum' update because condition not met
+[19:26:43.183] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Deparsing header 'ethernet'
+[19:26:43.183] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Deparsing header 'time'
+[19:26:43.183] [bmv2] [D] [thread 51185] [0.0] [cxt 0] Deparser 'deparser': end
+[19:26:43.183] [bmv2] [D] [thread 51189] [0.0] [cxt 0] Transmitting packet of size 94 out of port 0
+[19:26:43.496] [bmv2] [D] [thread 51265] Set default default entry for table 'tbl_src145': src145 - 
+[19:26:43.496] [bmv2] [D] [thread 51265] Set default default entry for table 'tbl_src149': src149 - 
+[19:26:43.496] [bmv2] [D] [thread 51265] Set default default entry for table 'MyIngress.ipv4_lpm': MyIngress.drop - 
+[19:26:43.497] [bmv2] [D] [thread 51265] Set default default entry for table 'tbl_src185': src185 - 
+[19:26:43.497] [bmv2] [D] [thread 51265] Set default default entry for table 'tbl_src180': src180 - 
+[19:26:43.497] [bmv2] [D] [thread 51265] Set default default entry for table 'tbl_src189': src189 - 
+[19:26:43.497] [bmv2] [D] [thread 51265] Set default default entry for table 'MyEgress.debug_table': NoAction - 
+[19:26:43.498] [bmv2] [D] [thread 51265] simple_switch target has been notified of a config swap
+[19:26:43.506] [bmv2] [D] [thread 51265] Entry 0 added to table 'MyIngress.ipv4_lpm'
+[19:26:43.506] [bmv2] [D] [thread 51265] Dumping entry 0
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a010102/32
+Action entry: MyIngress.ipv4_forward - 7a93a0aa906d,3,
+
+[19:26:43.507] [bmv2] [D] [thread 51270] Entry 1 added to table 'MyIngress.ipv4_lpm'
+[19:26:43.507] [bmv2] [D] [thread 51270] Dumping entry 1
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a010202/32
+Action entry: MyIngress.ipv4_forward - 7a93a0aa906d,3,
+
+[19:26:43.509] [bmv2] [D] [thread 51265] Entry 2 added to table 'MyIngress.ipv4_lpm'
+[19:26:43.509] [bmv2] [D] [thread 51265] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020302/32
+Action entry: MyIngress.ipv4_forward - a020302,1,
+
+[19:26:43.510] [bmv2] [D] [thread 51270] Entry 3 added to table 'MyIngress.ipv4_lpm'
+[19:26:43.510] [bmv2] [D] [thread 51270] Dumping entry 3
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020402/32
+Action entry: MyIngress.ipv4_forward - a020402,2,
+
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Processing packet received on port 3
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser 'parser': start
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Extracting header 'ethernet'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser state 'start': key is 0800
+[19:26:45.429] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Bytes parsed: 14
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Extracting header 'ipv4'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Extracting header 'time'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[19:26:45.429] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Bytes parsed: 42
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Parser 'parser': end
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Pipeline 'ingress': start
+[19:26:45.429] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(144) Condition "meta.queue_size < standard_metadata.deq_qdepth && meta.queue_size > 0" (node_2) is false
+[19:26:45.429] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(148) Condition "hdr.ipv4.isValid()" (node_4) is true
+[19:26:45.429] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Applying table 'tbl_src149'
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Looking up key:
+
+[19:26:45.429] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Table 'tbl_src149': miss
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Action entry is src149 - 
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Action src149
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(149) Primitive hdr.ipv4.dstAddr = 0x0a020302
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Applying table 'MyIngress.ipv4_lpm'
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0a020302
+
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Table 'MyIngress.ipv4_lpm': hit with handle 2
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020302/32
+Action entry: MyIngress.ipv4_forward - a020302,1,
+
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Action entry is MyIngress.ipv4_forward - a020302,1,
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] Action MyIngress.ipv4_forward
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(110) Primitive hdr.ethernet.srcAddr = hdr.ethernet.dstAddr
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(111) Primitive hdr.ethernet.dstAddr = dstAddr
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(112) Primitive standard_metadata.egress_spec = port
+[19:26:45.430] [bmv2] [T] [thread 51184] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(113) Primitive hdr.ipv4.ttl = hdr.ipv4.ttl - 1
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Pipeline 'ingress': end
+[19:26:45.430] [bmv2] [D] [thread 51184] [1.0] [cxt 0] Egress port is 1
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Pipeline 'egress': start
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(179) Condition "hdr.time.isValid()" (node_9) is true
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Applying table 'tbl_src185'
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Looking up key:
+
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Table 'tbl_src185': miss
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Action entry is src185 - 
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Action src185
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(185) Primitive hdr.time.time = hdr.time.time + (standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp)
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(186) Primitive meta.queue_size = (bit<19>)(hdr.time.time / (0x40))
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Applying table 'tbl_src189'
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Looking up key:
+
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Table 'tbl_src189': miss
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Action entry is src189 - 
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Action src189
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(189) Primitive meta.cur_persist_time = standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Applying table 'MyEgress.debug_table'
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Looking up key:
+* hdr.ipv4.identification     : c84c
+* hdr.ipv4.ttl                : 44
+* hdr.ethernet.dstAddr        : 00000a020302
+* standard_metadata.deq_qdepth: 000000
+* hdr.time.proto_id           : 0a01
+* hdr.time.time               : 01020a020599
+* meta.queue_size             : 000816
+* meta.cur_persist_time       : 000000000297
+
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Table 'MyEgress.debug_table': miss
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Action entry is NoAction - 
+[19:26:45.430] [bmv2] [T] [thread 51186] [1.0] [cxt 0] Action NoAction
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Pipeline 'egress': end
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Deparser 'deparser': start
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Updating checksum 'cksum'
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Deparsing header 'ethernet'
+[19:26:45.430] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Deparsing header 'time'
+[19:26:45.431] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Deparsing header 'ipv4'
+[19:26:45.431] [bmv2] [D] [thread 51186] [1.0] [cxt 0] Deparser 'deparser': end
+[19:26:45.431] [bmv2] [D] [thread 51189] [1.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Processing packet received on port 3
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser 'parser': start
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Extracting header 'ethernet'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser state 'start': key is 0800
+[19:26:46.445] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Bytes parsed: 14
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Extracting header 'ipv4'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Extracting header 'time'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[19:26:46.445] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Bytes parsed: 42
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Parser 'parser': end
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Pipeline 'ingress': start
+[19:26:46.445] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(144) Condition "meta.queue_size < standard_metadata.deq_qdepth && meta.queue_size > 0" (node_2) is false
+[19:26:46.445] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(148) Condition "hdr.ipv4.isValid()" (node_4) is true
+[19:26:46.445] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Applying table 'tbl_src149'
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Looking up key:
+
+[19:26:46.445] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Table 'tbl_src149': miss
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Action entry is src149 - 
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Action src149
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(149) Primitive hdr.ipv4.dstAddr = 0x0a020302
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Applying table 'MyIngress.ipv4_lpm'
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0a020302
+
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Table 'MyIngress.ipv4_lpm': hit with handle 2
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020302/32
+Action entry: MyIngress.ipv4_forward - a020302,1,
+
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Action entry is MyIngress.ipv4_forward - a020302,1,
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] Action MyIngress.ipv4_forward
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(110) Primitive hdr.ethernet.srcAddr = hdr.ethernet.dstAddr
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(111) Primitive hdr.ethernet.dstAddr = dstAddr
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(112) Primitive standard_metadata.egress_spec = port
+[19:26:46.446] [bmv2] [T] [thread 51184] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(113) Primitive hdr.ipv4.ttl = hdr.ipv4.ttl - 1
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Pipeline 'ingress': end
+[19:26:46.446] [bmv2] [D] [thread 51184] [2.0] [cxt 0] Egress port is 1
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Pipeline 'egress': start
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(179) Condition "hdr.time.isValid()" (node_9) is true
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Applying table 'tbl_src185'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Looking up key:
+
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Table 'tbl_src185': miss
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Action entry is src185 - 
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Action src185
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(185) Primitive hdr.time.time = hdr.time.time + (standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp)
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(186) Primitive meta.queue_size = (bit<19>)(hdr.time.time / (0x40))
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Applying table 'tbl_src189'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Looking up key:
+
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Table 'tbl_src189': miss
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Action entry is src189 - 
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Action src189
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(189) Primitive meta.cur_persist_time = standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Applying table 'MyEgress.debug_table'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Looking up key:
+* hdr.ipv4.identification     : c84c
+* hdr.ipv4.ttl                : 44
+* hdr.ethernet.dstAddr        : 00000a020302
+* standard_metadata.deq_qdepth: 000000
+* hdr.time.proto_id           : 0a01
+* hdr.time.time               : 01020a020559
+* meta.queue_size             : 000815
+* meta.cur_persist_time       : 000000000257
+
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Table 'MyEgress.debug_table': miss
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Action entry is NoAction - 
+[19:26:46.446] [bmv2] [T] [thread 51186] [2.0] [cxt 0] Action NoAction
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Pipeline 'egress': end
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Deparser 'deparser': start
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Updating checksum 'cksum'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Deparsing header 'ethernet'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Deparsing header 'time'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Deparsing header 'ipv4'
+[19:26:46.446] [bmv2] [D] [thread 51186] [2.0] [cxt 0] Deparser 'deparser': end
+[19:26:46.446] [bmv2] [D] [thread 51189] [2.0] [cxt 0] Transmitting packet of size 98 out of port 1
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Processing packet received on port 3
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser 'parser': start
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser 'parser' entering state 'start'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Extracting header 'ethernet'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser state 'start': key is 0800
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Bytes parsed: 14
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser 'parser' entering state 'parse_ipv4'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Extracting header 'ipv4'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Extracting header 'time'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser state 'parse_ipv4' has no switch, going to default next state
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Bytes parsed: 42
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Parser 'parser': end
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Pipeline 'ingress': start
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(144) Condition "meta.queue_size < standard_metadata.deq_qdepth && meta.queue_size > 0" (node_2) is false
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(148) Condition "hdr.ipv4.isValid()" (node_4) is true
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Applying table 'tbl_src149'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Looking up key:
+
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Table 'tbl_src149': miss
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Action entry is src149 - 
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Action src149
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(149) Primitive hdr.ipv4.dstAddr = 0x0a020302
+[19:26:47.467] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Applying table 'MyIngress.ipv4_lpm'
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Looking up key:
+* hdr.ipv4.dstAddr    : 0a020302
+
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Table 'MyIngress.ipv4_lpm': hit with handle 2
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Dumping entry 2
+Match key:
+* hdr.ipv4.dstAddr    : LPM       0a020302/32
+Action entry: MyIngress.ipv4_forward - a020302,1,
+
+[19:26:47.467] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Action entry is MyIngress.ipv4_forward - a020302,1,
+[19:26:47.468] [bmv2] [T] [thread 51184] [3.0] [cxt 0] Action MyIngress.ipv4_forward
+[19:26:47.468] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(110) Primitive hdr.ethernet.srcAddr = hdr.ethernet.dstAddr
+[19:26:47.468] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(111) Primitive hdr.ethernet.dstAddr = dstAddr
+[19:26:47.468] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(112) Primitive standard_metadata.egress_spec = port
+[19:26:47.468] [bmv2] [T] [thread 51184] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(113) Primitive hdr.ipv4.ttl = hdr.ipv4.ttl - 1
+[19:26:47.468] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Pipeline 'ingress': end
+[19:26:47.468] [bmv2] [D] [thread 51184] [3.0] [cxt 0] Egress port is 1
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Pipeline 'egress': start
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(179) Condition "hdr.time.isValid()" (node_9) is true
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Applying table 'tbl_src185'
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Looking up key:
+
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Table 'tbl_src185': miss
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Action entry is src185 - 
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Action src185
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(185) Primitive hdr.time.time = hdr.time.time + (standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp)
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(186) Primitive meta.queue_size = (bit<19>)(hdr.time.time / (0x40))
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Applying table 'tbl_src189'
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Looking up key:
+
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Table 'tbl_src189': miss
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Action entry is src189 - 
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Action src189
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] /home/sayanide/Projects/NEW/P1/p4src/src.p4(189) Primitive meta.cur_persist_time = standard_metadata.egress_global_timestamp - standard_metadata.ingress_global_timestamp
+[19:26:47.468] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Applying table 'MyEgress.debug_table'
+[19:26:47.468] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Looking up key:
+* hdr.ipv4.identification     : c84c
+* hdr.ipv4.ttl                : 44
+* hdr.ethernet.dstAddr        : 00000a020302
+* standard_metadata.deq_qdepth: 000000
+* hdr.time.proto_id           : 0a01
+* hdr.time.time               : 01020a0206b5
+* meta.queue_size             : 00081a
+* meta.cur_persist_time       : 0000000003b3
+
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Table 'MyEgress.debug_table': miss
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Action entry is NoAction - 
+[19:26:47.469] [bmv2] [T] [thread 51186] [3.0] [cxt 0] Action NoAction
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Pipeline 'egress': end
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Deparser 'deparser': start
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Updating checksum 'cksum'
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Deparsing header 'ethernet'
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Deparsing header 'time'
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Deparsing header 'ipv4'
+[19:26:47.469] [bmv2] [D] [thread 51186] [3.0] [cxt 0] Deparser 'deparser': end
+[19:26:47.469] [bmv2] [D] [thread 51189] [3.0] [cxt 0] Transmitting packet of size 98 out of port 1
